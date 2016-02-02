@@ -33,9 +33,9 @@ var textData="";
 
  function  wordCloud(textData, stopWords,colorRange){
     
-    var width = $("#sentimentGrP").width();
+    var width = $("#wordCloud").width();
    // var widthDid = $("news").width();
-    var height = $("#sentimentGrP").height();
+    var height = $("#wordCloud").height();
     /*$.ajax({
             url: ur,
             dataType: "json",
@@ -126,7 +126,7 @@ var textData="";
 
                      };
 		var viewUpdateFunction = (function(chart) {
-		this.view = chart({el:"#sentimentGrP"}).update();
+		this.view = chart({el:"#wordCloud"}).update();
 		}).bind(this);
 		vg.parse.spec(text, viewUpdateFunction);
           /*  },
