@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 //var myData = JSON.stringify(TextData);
 
-drawCloud("wordCloudgi");
+drawCloud("wordCloud");
 	
 });
 
