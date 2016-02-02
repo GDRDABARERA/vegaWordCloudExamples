@@ -3,46 +3,44 @@
 $(document).ready(function(){
 
 //var myData = JSON.stringify(TextData);
-var TextData =["#Trump Where was Trump when Cruz was fighting Rubio and Schumer on amnesty for illegals? Cruz is the true conservative.","#RealDonaldTrump is the greatest business mind: https://t.co/nJZdbmkpJG https://t.co/pivvj0nvje","Trending Now: #Trump | #Oregon | #Debate | #Up | #China | #Sanders | #After | #Bundy | #Leader | #Obama via https://t.co/942kPJKfeu#RealDonaldTrump will save us: https://t.co/cSpSIMH5W9 https://t.co/AYUHae69bb","#RealDonaldTrump is the greatest business mind: https://t.co/nJZdbmkpJG https://t.co/W8LvHyQl9l"];
-var textData="";
-    for(var i=0;i<TextData.length;i++){
-        var shortText= TextData[i];
 
-
-       var urlRegex = /(https?:\/\/[^\s]+)/g;
-     var characterRegex=/[^a-z0-9]+|\s+/gmi;
-       shortText =shortText.replace(urlRegex," ").replace(characterRegex," ");
-
-      //shortText=shortText.replace
-
-       textData=textData+" "+shortText;
-    }
-
-    var stopWords ="(i|me|my|myself|we|us|our|just|ours|ourselves|you|your|yours|yourself|yourselves|he|him|his|himself|she|her|hers|herself|it|its|itself|they|them|their|theirs|themselves|what|which|who|whom|whose|this|that|these|those|am|is|are|was|were|be|been|being|have|has|had|having|do|does|did|doing|will|would|should|can|could|ought|i'm|you're|he's|she's|it's|we're|they're|i've|you've|we've|they've|i'd|you'd|he'd|she'd|we'd|they'd|i'll|you'll|he'll|she'll|we'll|they'll|isn't|aren't|wasn't|weren't|hasn't|haven't|hadn't|doesn't|don't|didn't|won't|wouldn't|shan't|shouldn't|can't|cannot|couldn't|mustn't|let's|that's|who's|what's|here's|there's|when's|where's|why's|how's|a|an|the|and|but|if|or|because|as|until|while|of|at|by|for|with|about|against|between|into|through|during|before|after|above|below|to|from|up|upon|down|in|out|on|off|over|under|again|further|then|once|here|there|when|where|why|how|all|any|both|each|few|more|most|other|some|such|no|nor|not|only|own|same|so|than|too|very|say|says|said|shall|trump|donaldtrump|hillary|clinton|hillaryclinton|ted|cruz|tedcruz|rick|santorum|ricksantorum|marco|rubio|marcorubio|mike|huckabee|mikehuckabee|martin|omalley|martinomalley|carly|fiorina|carlyfiorina|rand|paul|randpaul|john|kasich|johnkasich|ben|carson|bencarson|lindsley|graham|lindsleygraham|scott|walker|scottwalker|jim|gilmore|jimgilmore|jeb|bush|jebbush|http|https|chris|christie|chrischristie|pataki|george|georgepataki|election|election2016)";
-    var colorRange=["#fc61e2","#7d3070","#511f49"];
-     wordCloud(textData, stopWords);
-
+drawCloud("wordCloudgi");
 	
 });
 
 
 
 
+function drawCloud(Htag){
+    var htag="#"+Htag;
+    var TextData =["#Trump Where was Trump when Cruz was fighting Rubio and Schumer on amnesty for illegals? Cruz is the true conservative.","#RealDonaldTrump is the greatest business mind: https://t.co/nJZdbmkpJG https://t.co/pivvj0nvje","Trending Now: #Trump | #Oregon | #Debate | #Up | #China | #Sanders | #After | #Bundy | #Leader | #Obama via https://t.co/942kPJKfeu#RealDonaldTrump will save us: https://t.co/cSpSIMH5W9 https://t.co/AYUHae69bb","#RealDonaldTrump is the greatest business mind: https://t.co/nJZdbmkpJG https://t.co/W8LvHyQl9l","You change default value in MySQL configuration file (option connect_timeout in mysqld section) -","Also there are two other timeouts too which are configurable by above methods; wait_timeout & interactive_timeout. For detailed information check link; rackspace.com/knowledge_center/article/"];
+    var textData="";
+        for(var i=0;i<TextData.length;i++){
+            var shortText= TextData[i];
 
 
+           var urlRegex = /(https?:\/\/[^\s]+)/g;
+           var characterRegex=/[^a-z]+|\s+/gmi;
+           shortText =shortText.replace(urlRegex," ").replace(characterRegex," ");
 
- function  wordCloud(textData, stopWords,colorRange){
+          //shortText=shortText.replace
+
+           textData=textData+" "+shortText;
+        }
+
+        var stopWords ="(i|me|my|myself|we|us|our|just|ours|ourselves|you|your|yours|yourself|yourselves|he|him|his|himself|she|her|hers|herself|it|its|itself|they|them|their|theirs|themselves|what|which|who|whom|whose|this|that|these|those|am|is|are|was|were|be|been|being|have|has|had|having|do|does|did|doing|will|would|should|can|could|ought|i'm|you're|he's|she's|it's|we're|they're|i've|you've|we've|they've|i'd|you'd|he'd|she'd|we'd|they'd|i'll|you'll|he'll|she'll|we'll|they'll|isn't|aren't|wasn't|weren't|hasn't|haven't|hadn't|doesn't|don't|didn't|won't|wouldn't|shan't|shouldn't|can't|cannot|couldn't|mustn't|let's|that's|who's|what's|here's|there's|when's|where's|why's|how's|a|an|the|and|but|if|or|because|as|until|while|of|at|by|for|with|about|against|between|into|through|during|before|after|above|below|to|from|up|upon|down|in|out|on|off|over|under|again|further|then|once|here|there|when|where|why|how|all|any|both|each|few|more|most|other|some|such|no|nor|not|only|own|same|so|than|too|very|say|says|said|shall|trump|donaldtrump|hillary|clinton|hillaryclinton|ted|cruz|tedcruz|rick|santorum|ricksantorum|marco|rubio|marcorubio|mike|huckabee|mikehuckabee|martin|omalley|martinomalley|carly|fiorina|carlyfiorina|rand|paul|randpaul|john|kasich|johnkasich|ben|carson|bencarson|lindsley|graham|lindsleygraham|scott|walker|scottwalker|jim|gilmore|jimgilmore|jeb|bush|jebbush|http|https|chris|christie|chrischristie|pataki|george|georgepataki|election|election2016)";
+        var colorRange=["#fc61e2","#7d3070","#511f49"];
+         wordCloud(textData, stopWords,htag);
+
+}
+
+
+ function  wordCloud(textData, stopWords,htag){
     
-    var width = $("#wordCloud").width();
-   // var widthDid = $("news").width();
-    var height = $("#wordCloud").height();
-    /*$.ajax({
-            url: ur,
-            dataType: "json",
-	    contentType:'application/json',
-    	    data: JSON.stringify(Candidates),
-            type: "POST",
-            success: function(e){ */
+    var width = $(htag).width();
+
+    var height = $(htag).height();
+
                 if(textData){
 		                                                
                   var text={
@@ -126,12 +124,8 @@ var textData="";
 
                      };
 		var viewUpdateFunction = (function(chart) {
-		this.view = chart({el:"#wordCloud"}).update();
+		this.view = chart({el:htag}).update();
 		}).bind(this);
 		vg.parse.spec(text, viewUpdateFunction);
-          /*  },
-	    error: function(er){
-		alert("Error Graph Sentiment" + er);
-	   }
-     }); */
+
 }
